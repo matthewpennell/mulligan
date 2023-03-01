@@ -2,7 +2,7 @@
 
 A custom-built theme for [Ghost](http://github.com/tryghost/ghost/), developed for matthewpennell.com.
 
-![screenshot-desktop]()
+![screenshot-desktop](https://raw.githubusercontent.com/matthewpennell/mulligan/main/assets/screenshot-desktop.png)
 
 # Development
 
