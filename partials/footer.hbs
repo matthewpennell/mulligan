@@ -29,8 +29,8 @@
             {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
             {{#if @site.members_enabled}}
                 <form class="footer-signup" data-members-form="signup">
-                    <label for="email">Email address:</label>
-                    <input data-members-email type="email" id="email" required="true">
+                    <label for="footer-email" class="sr-only">Email address:</label>
+                    <input data-members-email type="email" id="footer-email" required="true">
                     <button type="submit">Subscribe</button>
                 </form>
             {{/if}}

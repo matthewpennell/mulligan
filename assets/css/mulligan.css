@@ -342,10 +342,6 @@ header .fa-bars {
   gap: 1.6rem;
 }
 
-.home-signup label {
-  display: none;
-}
-
 .home-signup input {
   width: 100%;
   border: 0;
@@ -880,10 +876,6 @@ footer span {
   display: flex;
   gap: 3.2rem;
   font-family: var(--font-sans);
-}
-
-.footer-signup label {
-  display: none;
 }
 
 .footer-signup input {
