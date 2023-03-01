@@ -1,0 +1,50 @@
+<footer>
+    <nav id="site-footer-nav">
+        {{navigation}}
+    </nav>
+    <div class="inner">
+        <section id="listening">
+            <h2>Listening</h2>
+        </section>
+        <section id="reading">
+            <h2>Reading</h2>
+            {{#if @custom.reading_title}}
+                <img src="{{@custom.reading_image}}" alt="{{@custom.reading_title}} by {{@custom.reading_author}}">
+                <em>{{@custom.reading_title}}</em>
+                <span>{{@custom.reading_author}}</span>
+            {{/if}}
+        </section>
+        <section id="watching">
+            <h2>Watching</h2>
+            {{#if @custom.watching_title}}
+                <img src="{{@custom.watching_image}}" alt="{{@custom.watching_title}} ({{@custom.watching_year}})">
+                <em>{{@custom.watching_title}}</em>
+                <span>({{@custom.watching_year}})</span>
+            {{/if}}
+        </section>
+        <section id="about">
+            <h2>About this site</h2>
+            <p>This is a personal weblog, and has existed in some form or another since 2004. This current iteration was launched in early 2023.</p>
+            <p>If you are interested in finding out when new entries are published, you can either subscribe via RSS, or receive updates by email by signing up below:</p>
+            {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
+            {{#if @site.members_enabled}}
+                <form class="footer-signup" data-members-form="signup">
+                    <label for="email">Email address:</label>
+                    <input data-members-email type="email" id="email" required="true">
+                    <button type="submit">Subscribe</button>
+                </form>
+            {{/if}}
+            <ul class="social">
+                <li class="twitter"><a href="https://twitter.com/matthewpennell" target="_blank" rel="noopener" class="fa-brands fa-twitter">Twitter</a></li>
+                <li class="instagram"><a href="https://www.instagram.com/matthewpennell/" target="_blank" rel="noopener" class="fa-brands fa-instagram">Instagram</a></li>
+                <li class="medium"><a href="https://medium.com/@matthewpennell" target="_blank" rel="noopener" class="fa-brands fa-medium">Medium</a></li>
+                <li class="dribbble"><a href="https://dribbble.com/matthewpennell" target="_blank" rel="noopener" class="fa-brands fa-dribbble">Dribbble</a></li>
+                <li class="lastfm"><a href="https://www.last.fm/user/Watchmaker" target="_blank" rel="noopener" class="fa-brands fa-square-lastfm">Last.fm</a></li>
+                <li class="github"><a href="https://github.com/matthewpennell/" target="_blank" rel="noopener" class="fa-brands fa-github">GitHub</a></li>
+                <li class="linkedin"><a href="https://www.linkedin.com/in/matthewpennell/" target="_blank" rel="noopener" class="fa-brands fa-linkedin">LinkedIn</a></li>
+            </ul>
+        </section>
+        <section id="colophon">Powered by <a href="https://ghost.org/" target="_blank" rel="noopener">Ghost</a> / Hosted by <a href="https://www.digitalocean.com/" target="_blank" rel="noopener">Digital Ocean</a> / Design and code by Matthew Pennell</section>
+        <section id="copyright">&copy; {{date format="YYYY"}} All rights reserved</section>
+    </div>
+</footer>

@@ -1,0 +1,62 @@
+{{!< default}}
+
+<main role="main">
+
+    <div class="columns">
+        {{#foreach posts columns="3"}}
+            {{#if @rowStart}}
+                <div class="column">
+            {{/if}}
+            {{#if @first}}
+                <div class="description">
+                    {{@site.description}}
+                </div>
+            {{/if}}
+            {{> "post-card"}}
+            {{#if @rowEnd}}
+                </div> <!-- /column -->
+            {{else}}
+                {{#if @last}}
+                    </div> <!-- /column -->
+                {{/if}}
+            {{/if}}
+        {{/foreach}}
+    </div>
+
+    <div class="column other-stuff">
+        <div class="home-about">
+            <h2>About</h2>
+            <p>This is a personal weblog where I write about web stuff, writing, music, games, and whatever else captures my interest; it has existed in some form or another since 2004. This current iteration was launched in early 2023.</p>
+        </div>
+        <div class="home-rss">
+            <h2>RSS</h2>
+            <p>Want to subscribe the old-fashioned way? {{#link href="/rss/"}}Click here for the RSS feed{{/link}}.</p>
+        </div>
+        <div class="home-elsewhere">
+            <h2>Elsewhere</h2>
+            <p>Other places you can find me online:</p>
+            <ul>
+                <li><a href="https://twitter.com/matthewpennell">Twitter</a></li>
+                <li><a href="https://www.instagram.com/matthewpennell/">Instagram</a></li>
+                <li><a href="https://github.com/matthewpennell/">GitHub</a></li>
+                <li><a href="https://medium.com/@matthewpennell">Medium</a></li>
+                <li><a href="https://www.last.fm/user/Watchmaker">Last.fm</a></li>
+                <li><a href="https://dribbble.com/matthewpennell">Dribbble</a></li>
+            </ul>
+        </div>
+        <form class="home-signup" data-members-form="signup">
+            {{#if @member}}
+                <p>This is a blog running on the Ghost platform. You are already subscribed to receive updates via email.</p>
+                <p><a href="javascript:" data-members-signout>Sign out</a></p>
+            {{else}}
+                <p>This is a blog running on the Ghost platform. You can subscribe to receive updates via email:</p>
+                <label for="email">Email address:</label>
+                <input data-members-email type="email" id="email" required="true">
+                <button type="submit">Subscribe now</button>
+            {{/if}}
+        </form>
+    </div>
+
+</main>
+
+{{pagination}}

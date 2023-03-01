@@ -1,0 +1,27 @@
+{{!< default}}
+
+<main role="main" class="categories">
+
+    <h1>Categories</h1>
+
+    <ul>
+        {{#get "tags" limit="all" include="count.posts" order="count.posts desc"}}
+            {{#foreach tags}}
+                <li>
+                    <a href="{{url}}" class="tag">{{name}}</a>
+                    {{#get "posts" filter="tags:{{slug}}"}}
+                        <ul>
+                            {{#foreach posts}}
+                                <li>
+                                    <a href="{{url}}">{{title}}</a>
+                                    <p>{{excerpt}}</p>
+                                </li>
+                            {{/foreach}}
+                        </ul>
+                    {{/get}}
+                </li>
+            {{/foreach}}
+        {{/get}}
+    </ul>
+
+</main>

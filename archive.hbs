@@ -1,0 +1,21 @@
+{{!< default}}
+
+<main role="main" class="archive">
+
+    <h1>Blog Archive</h1>
+
+    <ol>
+        {{#get "posts" limit="all" order="published_at desc"}}
+            {{#foreach posts}}
+                <li class="post post-date-{{date format="M"}}">
+                    <div class="post-label">{{date format="MMMM YYYY"}}</div>
+                    <a class="post-link" href="{{url}}">
+                        <span class="post-title">{{title}}</span>
+                    </a>
+                    <p>{{excerpt}}</p>
+                </li>
+            {{/foreach}}
+        {{/get}}
+    </ol>
+
+</main>

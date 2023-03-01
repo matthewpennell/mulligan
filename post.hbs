@@ -1,0 +1,78 @@
+{{!< default}}
+
+{{#post}}
+
+<main role="main">
+
+    <article class="{{post_class}}">
+
+        <section id="metadata">
+
+            {{#if feature_image}}
+                <figure class="article-image">
+                    {{!-- This is a responsive image, it loads different sizes depending on device
+                    https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
+                    <img
+                        srcset="{{img_url feature_image size="s"}} 300w,
+                                {{img_url feature_image size="m"}} 600w,
+                                {{img_url feature_image size="l"}} 1000w,
+                                {{img_url feature_image size="xl"}} 2000w"
+                        sizes="(min-width: 1400px) 1400px, 92vw"
+                        src="{{img_url feature_image size="xl"}}"
+                        alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                    />
+                    {{#if feature_image_caption}}
+                        <figcaption>{{feature_image_caption}}</figcaption>
+                    {{/if}}
+                </figure>
+            {{/if}}
+
+            <header>
+
+                <div class="tags">
+                    {{tags separator=" / "}}
+                </div>
+
+                <h1>{{title}}</h1>
+
+                <section id="post-info">
+                    <div>Author: {{authors}}</div>
+                    <div>Posted: <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="h:mma on dddd MMMM Do, YYYY"}}</time></div>
+                    {{#if reading_time}}
+                        <div>Reading time: {{reading_time}}</div>
+                    {{/if}}
+                </section>
+
+                <ul class="share">
+                    <li class="facebook"><a href="http://www.facebook.com/sharer/sharer.php?href={{url absolute="true"}}" target="_blank" rel="noopener" class="fa-brands fa-facebook">Facebook</a></li>
+                    <li class="twitter"><a href="https://twitter.com/intent/tweet?original_referer={{url absolute="true"}}&text={{title}}&url={{url absolute="true"}}&via=matthewpennell" target="_blank" rel="noopener" class="fa-brands fa-twitter">Twitter</a></li>
+                    <li class="tumblr"><a href="http://tumblr.com/widgets/share/tool?canonicalUrl={{url absolute="true"}}" target="_blank" rel="noopener" class="fa-brands fa-tumblr">Tumblr</a></li>
+                    <li class="linkedin"><a href="https://www.linkedin.com/sharing/share-offsite/?url={{url absolute="true"}}" target="_blank" rel="noopener" class="fa-brands fa-linkedin">LinkedIn</a></li>
+                </ul>
+
+            </header>
+
+        </section>
+
+        <div id="post-content">
+            <div id="post-content-dropcap"></div>
+            {{content}}
+            <div id="post-content-end"></div>
+            <div id="post-navigation">
+                {{#prev_post}}
+                    Previous post: <a href="{{url}}">{{title}}</a>
+                {{/prev_post}}
+            </div>
+        </div>
+
+        {{#if comments}}
+            <section id="comments">
+                {{comments}}
+            </section>
+        {{/if}}
+
+    </article>
+
+</main>
+
+{{/post}}

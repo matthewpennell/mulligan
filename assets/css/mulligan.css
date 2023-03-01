@@ -1,0 +1,1114 @@
+/* Table of Contents
+/* ------------------------------------------------------------
+
+This is a development CSS file which is built to a minified
+production stylesheet in assets/built/mulligan.css
+
+1.  Global Styles
+2.  Layout
+3.  Special Templates
+4.  Site Header
+5.  Site Navigation
+6.  Post Feed
+7.  Single Post
+  7.1. Post Byline
+  7.2. Members Subscribe Form
+  7.4. Related Posts
+  7.5. Koenig Styles
+  7.6  Comments
+8.  Author Template
+9.  Error Template
+11. Site Footer
+12. Dark Mode
+
+*/
+
+/* 1. Global - Set up the things
+/* ---------------------------------------------------------- */
+
+/* Import CSS reset and base styles */
+@import "reset.css";
+
+/* Import web font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+
+    /* Colours */
+    --color-darkgreen: #033746;
+    --color-midgreen: #33746f;
+    --color-lightgreen: #4dd4bb;
+    --color-lightestgreen: #f2f5f6;
+    --color-pink: #c03374;
+    --color-yellow: #f4dd4b;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-grey: #ccc;
+
+    /* Fonts */
+    --font-sans: "Inter", "Akzidenz-Grotesk", "Roboto", "Droid Sans", "Helvetica Neue", sans-serif;
+    --font-serif: "Palatino Linotype", Georgia, Times, serif;
+    --font-mono: Menlo, Courier, monospace;
+
+}
+
+html {
+  font-size: 62.5%; /* reset rem to 10px to make calculations easy */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  height: 100%;
+}
+
+body {
+  background: var(--color-white);
+  color: var(--color-black);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: normal;
+  height: 100%;
+  letter-spacing: 0;
+  line-height: 3.2rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
+}
+
+/* 2. Layout - Page building blocks
+/* ---------------------------------------------------------- */
+
+html, body {
+}
+
+#wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+  flex: 2;
+}
+
+#container {
+  max-width: 1228px; /* 12-column grid of 73px columns with 32px gutters */
+  margin: 0 auto 9.6rem;
+}
+
+main, .columns {
+  align-items: flex-start;
+  display: flex;
+  gap: 3.2rem;
+  justify-content: space-between;
+}
+
+main {
+  padding-top: 10rem;
+}
+
+.column {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 3.2rem;
+  max-width: 28.3rem;
+}
+
+.other-stuff {
+  width: 28.3rem;
+  flex: 1;
+}
+
+/* 4. Site Header
+/* ---------------------------------------------------------- */
+
+.site-head {
+  padding-right: 6.4rem;
+  margin-top: 3.2rem;
+  overflow: visible;
+  position: relative;
+}
+
+#logo {
+  position: absolute;
+  left: 50%;
+  margin-left: -37px;
+  top: -0.8rem;
+}
+
+header .search {
+  background: var(--color-white);
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 6.4rem;
+  width: 6.4rem;
+  z-index: 1;
+}
+
+header .search:hover {
+  color: var(--color-white);
+}
+
+/* 5. Site Navigation
+/* ---------------------------------------------------------- */
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-spacer-gif {
+flex-grow: 1;
+visibility: hidden;
+}
+
+.site-head nav li a {
+  position: relative;
+  z-index: 1;
+  display: block;
+  color: var(--color-darkgreen);
+  font-size: 1.6rem;
+  padding: 1.6rem 3.2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color .5s;
+}
+
+.site-head nav li a:after,
+header .search:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 1px;
+  content: ' ';
+  color: transparent;
+  background: var(--color-midgreen);
+  border-radius: 2px;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+  transition: all .5s;
+}
+
+.site-head nav a:hover,
+.site-head nav a:focus {
+  color: var(--color-white);
+}
+
+.site-head nav a:hover:after,
+.site-head nav a:focus:after,
+header .search:hover:after {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+
+header .fa-bars {
+  display: none;
+}
+
+/* Header styles
+/* ---------------------------------------------------------- */
+
+
+/* Brand
+/* ---------------------------------------------------------- */
+
+
+/* Primary Navigation
+/* ---------------------------------------------------------- */
+
+
+/* Dropdown
+/* ---------------------------------------------------------- */
+
+
+/* Secondary Navigation
+/* ---------------------------------------------------------- */
+
+
+/* Search
+/* ---------------------------------------------------------- */
+
+
+/* Mobile Menu Trigger
+/* ---------------------------------------------------------- */
+
+
+/* Mobile Menu
+/* ---------------------------------------------------------- */
+/* IDs needed to ensure sufficient specificity */
+
+
+/* 6. Post Feed
+/* ---------------------------------------------------------- */
+
+.column .text {
+  padding: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.description {
+  background: var(--color-darkgreen);
+  color: var(--color-white);
+  padding: 1.6rem 3.2rem;
+  text-align: center;
+}
+
+.column article {
+  background: var(--color-lightestgreen);
+  border-top: 1px solid var(--color-darkgreen);
+}
+
+.column .text a {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+.tags {
+  color: var(--color-midgreen);
+  font-size: 1.2rem;
+  font-family: var(--font-sans);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.post .tags a {
+  color: var(--color-pink);
+  text-decoration: none;
+}
+
+.column h2 {
+  font-family: var(--font-sans);
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+.column article:hover h2 a {
+  color: var(--color-darkgreen);
+}
+
+.column time {
+  display: block;
+  font-size: 1.2rem;
+}
+
+.excerpt {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+.other-stuff {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;  
+}
+
+.other-stuff h2 {
+  font: 700 2.4rem/1.33333 var(--font-serif);
+}
+
+.other-stuff p,
+.other-stuff ul {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin-bottom: 1.6rem;
+}
+
+.other-stuff li {
+  list-style: disc;
+  margin-left: 3.2rem;
+}
+
+.home-signup {
+  background: var(--color-darkgreen);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  padding: 3.2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.home-signup label {
+  display: none;
+}
+
+.home-signup input {
+  width: 100%;
+  border: 0;
+  border-radius: 4px;
+  color: var(--color-black);
+  font-size: 1.4rem;
+  padding: 0.8rem;
+}
+
+.home-signup button {
+  color: var(--color-white);
+  background: var(--color-pink);
+  font-size: 1.6rem;
+  line-height: 2;
+  border-radius: 99px;
+  width: 100%;
+  padding: 0.4rem 0;
+}
+
+/* Pagination
+/* ---------------------------------------------------------- */
+
+.pagination {
+  width: 91.3rem;
+  text-align: center;
+  font-size: 1.4rem;
+  margin-top: 3.2rem;
+}
+
+.page-number {
+  margin: 0 1.6rem;
+}
+
+/* 7. Single Post
+/* ---------------------------------------------------------- */
+
+#post-content a,
+.other-stuff a,
+.pagination a,
+.archive a {
+  color: var(--color-pink);
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+
+#post-content a:after,
+.other-stuff a:after,
+.pagination a:after,
+.archive a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 3px;
+  transform: scaleX(0);
+  background-color: var(--color-pink);
+  transition: transform 0.3s;
+}
+
+#post-content a:hover:after,
+.other-stuff a:hover:after,
+.pagination a:hover:after,
+.archive a:hover:after {
+  transform: scaleX(1);    
+}
+
+.post-template #metadata {
+  position: absolute;
+  left: 0;
+  width: calc(50% - 1.6rem);
+  margin-top: -3.2rem;
+}
+
+.post-template .article-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.article-image figcaption {
+  color: var(--color-grey);
+  position: absolute;
+  left: 1rem;
+  font-size: 12px;
+  font-family: var(--font-sans);
+  top: 0;
+}
+
+figcaption a {
+  color: inherit;
+}
+
+.post-template .article-image {
+  position: relative;
+}
+
+.post-template .article-image:before,
+.post-template .article-image:after {
+  position: absolute;
+  left: calc(100% - 28.3rem);
+  top: 0;
+  width: 1px;
+  height: 100%;
+  content: ' ';
+  background: var(--color-white);
+}
+
+.post-template .article-image:after {
+  left: calc(100% - 59.8rem);
+}
+
+.post-template article header {
+  background: var(--color-white);
+  padding: 3.2rem 3.2rem 3.2rem 8rem;
+  max-width: 49.3rem;
+  margin-top: -3.2rem;
+  position: relative;
+}
+
+.post-template article header::before {
+  content: " ";
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: var(--color-darkgreen);
+  position: absolute;
+  left: 3.2rem;
+}
+
+.post-template header h1 {
+  font-size: 2rem;
+  line-height: 3.2rem;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  margin: 0;
+}
+
+#post-info {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin: 1.6rem 0;
+}
+
+#post-info a {
+  color: var(--color-pink);
+  text-decoration: none;
+}
+
+#post-content {
+  margin-left: calc(50% + 1.6rem);
+  position: relative;
+}
+
+#post-content-dropcap {
+  background: var(--color-yellow);
+  font-size: 17.8rem;
+  float: left;
+  margin-left: -10.5rem;
+  width: 17.8rem;
+  height: 17.8rem;
+  text-align: center;
+  line-height: 16.8rem;
+  margin-right: 3.2rem;
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+#post-content h2,
+#post-content h3 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+}
+
+#post-content h2 {
+  font-size: 3.2rem;
+  line-height: 1.5;
+}
+
+#post-content h3 {
+  font-size: 2.4rem;
+  line-height: 1.33333;
+}
+
+#post-content blockquote {
+  background: var(--color-darkgreen);
+  color: var(--color-white);
+  padding: 3.2rem;
+  font-size: 3.2rem;
+  line-height: 1.5;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 3.2rem;
+}
+
+.kg-card {
+  margin-bottom: 3.2rem;
+}
+
+.kg-card iframe {
+  width: 100%;
+  height: calc(59.8rem / 16 * 9); /* TODO: this breaks Spotify playlist embeds */
+}
+
+.kg-card figcaption {
+  font-size: 1.2rem;
+  line-height: 1.66667;
+  color: #666;
+  font-style: italic;
+  padding: 0.8rem;
+  text-align: center;
+}
+
+.kg-image-card {
+  float: right;
+  width: 100%;
+  margin: 0 calc((1228px - 100vw + 1.6rem) / 2) 3.2rem 3.2rem;
+}
+
+.kg-image-card figcaption {
+  text-align: right;
+}
+
+.kg-width-wide,
+.kg-width-full {
+  width: 100%;
+}
+
+#post-content hr {
+  border: 1px solid var(--color-grey);
+  margin: 0 0 3.2rem;
+}
+
+#post-content-end {
+  width: 3.2rem;
+  height: 3.2rem;
+  background: var(--color-darkgreen);
+}
+
+#post-content-end::after {
+  content: " ";
+  display: block;
+  width: 3.2rem;
+  height: 3.2rem;
+  background: var(--color-yellow);
+  margin-left: 4.8rem;
+}
+
+#post-navigation {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  margin-left: -100%;
+  text-align: right;
+  width: 100%;
+  padding-right: 1.6rem;
+  top: -3.2rem;
+  position: relative;
+}
+
+/* About
+/* ---------------------------------------------------------- */
+
+.page-template #metadata {
+  position: absolute;
+}
+
+.page-template h1 {
+  font: 700 7.3rem/1 var(--font-sans);
+  margin: 0 0 3.2rem;
+}
+
+.page-template #post-content-dropcap,
+.page-template #post-info,
+.page-template .share,
+.page-template #post-navigation {
+  display: none;
+}
+
+/* Archive
+/* ---------------------------------------------------------- */
+
+.archive,
+.categories {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.archive h1,
+.categories h1 {
+  margin: 0;
+  grid-column: 1 / span 6;
+}
+
+.archive ol,
+.categories ul {
+  flex: 2;
+  margin-top: -3.2rem;
+  grid-column: 7 / span 6;
+}
+
+.categories li {
+  margin-bottom: 3.2rem;
+}
+
+.categories ul ul {
+  margin: 0;
+}
+
+.categories li li {
+  margin-bottom: 0;
+}
+
+.post-label,
+.categories .tag {
+  font: 700 1.4rem/1.66667 var(--font-sans);
+  text-transform: uppercase;
+  color: var(--color-midgreen);
+  margin-top: 3.2rem;
+  margin-left: -3.2rem;
+}
+
+.archive a,
+.categories a {
+  color: var(--color-pink);
+  text-decoration: none;
+}
+
+.archive p,
+.categories p {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  color: #666;
+  margin: 0 0 1.6rem 0;
+  font-family: var(--font-sans);
+}
+
+.post-date-1 + .post-date-1 .post-label,
+.post-date-2 + .post-date-2 .post-label,
+.post-date-3 + .post-date-3 .post-label,
+.post-date-4 + .post-date-4 .post-label,
+.post-date-5 + .post-date-5 .post-label,
+.post-date-6 + .post-date-6 .post-label,
+.post-date-7 + .post-date-7 .post-label,
+.post-date-8 + .post-date-8 .post-label,
+.post-date-9 + .post-date-9 .post-label,
+.post-date-10 + .post-date-10 .post-label,
+.post-date-11 + .post-date-11 .post-label,
+.post-date-12 + .post-date-12 .post-label {
+  display: none;
+}
+
+/* Content
+/* ---------------------------------------------------------- */
+
+/* Content refers to styling all page and post content that is
+created within the Ghost editor. The main content handles
+headings, text, images and lists. We deal with cards lower down. */
+
+#post-content p,
+#post-content ol,
+#post-content ul {
+  margin-bottom: 3.2rem;
+}
+
+#post-content ul li {
+  list-style: disc;
+}
+
+#post-content ol li {
+  list-style: decimal;
+}
+
+.share {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.share a {
+  font-size: 0 !important;
+}
+
+.share a:before {
+  display: inline-block;
+  font-size: 20px;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  color: #666;
+}
+
+.share a:hover:before {
+  color: var(--color-pink);
+}
+
+/* Cards
+/* ---------------------------------------------------------- */
+
+/* Cards are dynamic blocks of content which appear within Ghost
+posts, for example: embedded videos, tweets, galleries, or
+specially styled bookmark links. We add extra styling here to
+make sure they look good, and are given a bit of extra spacing. */
+
+
+/* Card captions
+/* ---------------------------------------------------------- */
+
+
+/* Tables */
+
+/* 7.1. Post Byline
+/* ---------------------------------------------------------- */
+
+
+/* 7.3. Subscribe
+/* ---------------------------------------------------------- */
+
+
+/* 7.4. Read more
+/* ---------------------------------------------------------- */
+
+
+/* 7.6. Comments
+/* ---------------------------------------------------------- */
+
+/* 8. Author Template
+/* ---------------------------------------------------------- */
+
+
+/* 8. Tag Template
+/* ---------------------------------------------------------- */
+
+
+/* 9. Error Template
+/* ---------------------------------------------------------- */
+
+
+/* 11. Site Footer
+/* ---------------------------------------------------------- */
+
+footer {
+  background: var(--color-darkgreen);
+  color: var(--color-white);
+}
+
+footer .inner {
+  max-width: 1228px; /* 12-column grid of 73px columns with 32px gutters */
+  margin: 0 auto; 
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: min-content min-content;
+  gap: 3.2rem;
+  overflow: hidden;
+}
+
+#site-footer-nav {
+  background: var(--color-midgreen);
+  margin-bottom: 3.2rem;
+}
+
+#site-footer-nav ul {
+  justify-content: start;
+  max-width: 1228px;
+  margin: 0 auto;
+}
+
+footer .nav-spacer-gif {
+  display: none;
+}
+
+#site-footer-nav a {
+  color: var(--color-white);
+  font: 700 1.4rem/3 var(--font-sans);
+  text-decoration: none;
+  padding: 0 3.2rem;
+  display: block;
+}
+
+#site-footer-nav li:hover {
+  background: var(--color-darkgreen);
+  transition: all 0.5s;
+}
+
+#listening, #reading, #watching, #about {
+  grid-row: 1 / auto;
+}
+
+#listening {
+  grid-column: 1 / span 3;
+}
+
+footer img {
+  width: 100%;
+  min-height: 28.3rem;
+  border-radius: 1px;
+}
+
+footer em, footer span {
+  display: block;
+  font-size: 1.6rem;
+  line-height: 2;
+  text-align: center;
+}
+
+footer span {
+  font-size: 1.4rem;
+  line-height: 1.71429;
+}
+
+#reading {
+  grid-column: 4 / span 2;
+}
+
+#watching {
+  grid-column: 6 / span 2;
+}
+
+#about {
+  grid-column: 8 / span 5;
+}
+
+.footer-signup {
+  display: flex;
+  gap: 3.2rem;
+  font-family: var(--font-sans);
+}
+
+.footer-signup label {
+  display: none;
+}
+
+.footer-signup input {
+  width: 28.3rem;
+  border: 0;
+  border-radius: 4px;
+  color: var(--color-black);
+  font-size: 1.4rem;
+  padding: 0.8rem;
+}
+
+.footer-signup button {
+  color: var(--color-white);
+  background: var(--color-pink);
+  font-size: 1.6rem;
+  line-height: 2;
+  border-radius: 99px;
+  width: 17.8rem;
+  padding: 0.4rem 0;
+}
+
+#colophon, #copyright {
+  font: 700 1.2rem/2 var(--font-sans);
+  grid-row: 2 / auto;
+}
+
+#colophon {
+  grid-column: 1 / span 9;
+}
+
+#copyright {
+  grid-column: 10 / span 3;
+  text-align: right;
+  position: relative;
+  padding-bottom: 1.6rem;
+}
+
+#copyright::after {
+  color: var(--color-yellow);
+  content: "\2B22";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -3.2rem;
+  font-size: 3.2rem;
+}
+
+#colophon a {
+  color: var(--color-pink);
+  text-decoration: none;
+}
+
+footer h2 {
+  font: 700 2rem/2.4 var(--font-sans);
+}
+
+footer p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin-bottom: 1.6rem;
+}
+
+.social {
+  display: flex;
+  gap: 2.4rem;
+  justify-content: center;
+  margin: 6.4rem 0 0;
+}
+
+.social a {
+  font-size: 0 !important;
+}
+
+.social a:before {
+  display: inline-block;
+  font-size: 24px;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  color: var(--color-midgreen);
+}
+
+.social a:hover:before {
+  color: var(--color-lightgreen);
+  transition: color 0.5s;
+}
+
+/* 12. Dark Mode
+/* ---------------------------------------------------------- */
+
+/* 13. Responsive & Mobile
+/* ---------------------------------------------------------- */
+
+/* Below 1228px width, add some margins */
+@media (max-width: 1292px) {
+
+  #container,
+  #site-footer-nav ul,
+  footer .inner {
+      margin-left: 3.2rem;
+      margin-right: 3.2rem;
+  }
+
+}
+
+/* Below 1024px width, linearise the homepage articles */
+@media (max-width: 1024px) {
+
+  .columns {
+    display: block;
+  }
+
+  .column {
+    max-width: 100%;
+  }
+
+  .post-template #metadata {
+    margin-top: 3.2rem;
+  }
+
+  .post-card-image-link img {
+    width: 100%;
+  }
+
+  .pagination {
+    width: 100%;
+  }
+
+  #listening {
+    grid-column: 1/span 4;
+  }
+
+  #reading {
+    grid-column: 5/span 3;
+  }
+
+  #watching {
+    display: none;
+  }
+
+  .footer-signup {
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .footer-signup input,
+  .footer-signup button {
+    width: 100%;
+  }
+
+  /* Convert navigation into a hamburger menu */
+  header nav {
+    position: absolute;
+  }
+
+  header .fa-bars {
+    display: block;
+    background: var(--color-darkgreen);
+    color: var(--color-white);
+    width: 6.4rem;
+    text-align: center;
+    line-height: 6.4rem;
+    border-radius: 2px;
+    font-size: 20px;
+    height: 6.4rem;
+  }
+
+  header nav:hover ul,
+  header nav:focus ul {
+    display: block;
+  }
+
+  header nav ul {
+    display: none;
+    background: var(--color-darkgreen);
+  }
+
+  .nav-spacer-gif {
+    display: none;
+  }
+
+  .site-head nav li a {
+    padding: 0.8rem 1.6rem;
+    color: var(--color-white);
+  }
+
+}
+
+/* Below 768px width (i.e. tablet and mobile), move the sidebar down below the articles */
+@media (max-width: 768px) {
+
+  main {
+    display: block;
+  }
+
+  .post-template #metadata,
+  .page-template #metadata {
+    margin-top: 0;
+    position: relative;
+    width: auto;
+  }
+
+  #post-content,
+  #post-content-dropcap {
+    margin-left: 0;
+  }
+
+  .other-stuff {
+    padding-top: 3.2rem;
+    width: 100%;
+  }
+
+  #site-footer-nav ul {
+    display: none;
+  }
+
+  #listening {
+    grid-column: 1/span 7;
+  }
+
+  #reading {
+    grid-column: 8/span 5;
+  }
+
+  #about {
+    grid-column: 1/span 12;
+    grid-row: 2;
+  }
+
+  #colophon, #copyright {
+    grid-row: 3;
+  }
+
+}
