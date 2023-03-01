@@ -1063,7 +1063,7 @@ footer p {
 
 }
 
-/* Below 768px width (i.e. tablet and mobile), move the sidebar down below the articles */
+/* Below 768px width (i.e. tablet and mobile), move the sidebar down below the articles and remove some footer elements */
 @media (max-width: 768px) {
 
   main {
@@ -1087,25 +1087,28 @@ footer p {
     width: 100%;
   }
 
-  #site-footer-nav ul {
+  #site-footer-nav ul,
+  #reading {
     display: none;
   }
 
-  #listening {
-    grid-column: 1/span 7;
-  }
-
-  #reading {
-    grid-column: 8/span 5;
+  #listening,
+  #about,
+  #colophon,
+  #copyright {
+    grid-column: 1/span 12;
   }
 
   #about {
-    grid-column: 1/span 12;
     grid-row: 2;
   }
 
-  #colophon, #copyright {
+  #colophon {
     grid-row: 3;
+  }
+
+  #copyright {
+    grid-row: 4;
   }
 
 }
