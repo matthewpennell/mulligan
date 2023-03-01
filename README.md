@@ -4,6 +4,25 @@ A custom-built theme for [Ghost](http://github.com/tryghost/ghost/), developed f
 
 ![screenshot-desktop](https://raw.githubusercontent.com/matthewpennell/mulligan/main/assets/screenshot-desktop.png)
 
+# Routes
+
+The routes.yaml file which controls the routing should look like this:
+
+```yaml
+routes:
+  /archive/: archive
+  /categories/: categories
+
+collections:
+  /:
+    permalink: /blog/{slug}/
+    template: index
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/
+```
+
 # Development
 
 Styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
