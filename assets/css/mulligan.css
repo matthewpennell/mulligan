@@ -134,6 +134,11 @@ main {
   top: -0.8rem;
 }
 
+#logo:hover {
+  top: -1rem;
+  transition: all linear 0.25s;
+}
+
 header .search {
   background: var(--color-white);
   position: absolute;
