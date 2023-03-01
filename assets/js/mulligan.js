@@ -21,13 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=Watchmaker&api_key=eae3e31423356ac400ac5c429a5b855e&format=json&limit=1').then(response => response.json()).then(json => {
         track_info = json.recenttracks.track[0];
         const artist = track_info.artist['#text'];
-        const track_name = track_info.name;
+        const album_name = track_info.album['#text'];
         const img = document.createElement('img');
         img.src = track_info.image[3]['#text'];
-        img.alt = `${track_name} by ${artist}`;
+        img.alt = `${album_name} by ${artist}`;
         const byline = document.createElement('div');
         const em = document.createElement('em');
-        em.innerHTML = track_name;
+        em.innerHTML = album_name;
         const span = document.createElement('span');
         span.innerHTML = artist;
         byline.appendChild(em);
