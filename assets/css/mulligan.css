@@ -899,6 +899,10 @@ footer span {
   grid-column: 8 / span 5;
 }
 
+#about a {
+  color: var(--color-lightgreen);
+}
+
 .footer-signup .form-fields {
   display: flex;
   gap: 3.2rem;
