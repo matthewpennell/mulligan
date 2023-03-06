@@ -25,13 +25,23 @@
         <section id="about">
             <h2>About this site</h2>
             <p>This is a personal weblog, and has existed in some form or another since 2004. This current iteration was launched in early 2023.</p>
-            <p>If you are interested in finding out when new entries are published, you can either subscribe via RSS, or receive updates by email by signing up below:</p>
-            {{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
-            {{#if @site.members_enabled}}
-                <form class="footer-signup" data-members-form="signup">
-                    <label for="footer-email" class="sr-only">Email address:</label>
-                    <input data-members-email type="email" id="footer-email" required="true">
-                    <button type="submit">Subscribe</button>
+            {{#if @member}}
+                <p>You are already subscribed to receive updates via email.</p>
+                <p><a href="javascript:" data-members-signout>Sign out</a></p>
+            {{else}}
+                <p>If you are interested in finding out when new entries are published, you can either subscribe via RSS, or receive updates by email by signing up below:</p>
+                <form class="footer-signup" data-members-form="subscribe">
+                    <div class="form-fields">
+                        <label for="footer-email" class="sr-only">Email address:</label>
+                        <input data-members-email type="email" id="footer-email" required="true">
+                        <button type="submit">Subscribe now</button>
+                    </div>
+                    <div class="message-success">
+                        <p><strong>Success!</strong> Check your inbox (or spam folder) and click the link to confirm your subscription.</p>
+                    </div>
+                    <div class="message-error">
+                        <p data-members-error><strong>Sorry!</strong> Looks like there was an error - please try again.</p>
+                    </div>
                 </form>
             {{/if}}
             <ul class="social">

@@ -342,6 +342,22 @@ header .fa-bars {
   gap: 1.6rem;
 }
 
+.home-signup p {
+  margin-bottom: 0;
+}
+
+.home-signup .message-success p,
+.home-signup .message-error p {
+  font-size: 1.4rem;
+  color: var(--color-lightgreen);
+}
+
+.home-signup .form-fields {
+  display: flex;
+  gap: 1.6rem;
+  flex-direction: column;
+}
+
 .home-signup input {
   width: 100%;
   border: 0;
@@ -359,6 +375,17 @@ header .fa-bars {
   border-radius: 99px;
   width: 100%;
   padding: 0.4rem 0;
+}
+
+.home-signup.success .form-fields,
+.home-signup .message-success,
+.home-signup .message-error {
+  display: none;
+}
+
+.home-signup.success .message-success,
+.home-signup.error .message-error {
+  display: block;
 }
 
 /* Pagination
@@ -872,10 +899,16 @@ footer span {
   grid-column: 8 / span 5;
 }
 
-.footer-signup {
+.footer-signup .form-fields {
   display: flex;
   gap: 3.2rem;
   font-family: var(--font-sans);
+}
+
+.footer-signup p {
+  margin-top: 1.6rem;
+  text-align: center;
+  color: var(--color-lightgreen);
 }
 
 .footer-signup input {
@@ -895,6 +928,17 @@ footer span {
   border-radius: 99px;
   width: 17.8rem;
   padding: 0.4rem 0;
+}
+
+.footer-signup.success .form-fields,
+.footer-signup .message-success,
+.footer-signup .message-error {
+  display: none;
+}
+
+.footer-signup.success .message-success,
+.footer-signup.error .message-error {
+  display: block;
 }
 
 #colophon, #copyright {
