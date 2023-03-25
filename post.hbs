@@ -6,7 +6,7 @@
 
 <main role="main">
 
-    <article class="{{post_class}}">
+    <article class="{{post_class}} h-entry">
 
         <section id="metadata">
 
@@ -31,15 +31,19 @@
 
             <header>
 
-                <div class="tags">
+                <div class="tags p-category">
                     {{tags separator=" / "}}
                 </div>
 
-                <h1>{{title}}</h1>
+                <h1 class="p-name">{{title}}</h1>
 
                 <section id="post-info">
-                    <div>Author: {{authors}}</div>
-                    <div>Posted: <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="dddd MMMM Do, YYYY"}}</time></div>
+                    <div>Author: 
+                        {{#foreach authors}}
+                            <a class="p-author h-card" href="https://matthewpennell.com/">{{name}}</a>
+                        {{/foreach}}
+                    </div>
+                    <div>Posted: <time class="dt-published" datetime="{{date format="YYYY-MM-DD"}}">{{date format="dddd MMMM Do, YYYY"}}</time></div>
                     {{#if reading_time}}
                         <div>Reading time: {{reading_time}}</div>
                     {{/if}}
@@ -56,7 +60,7 @@
 
         </section>
 
-        <div id="post-content">
+        <div id="post-content" class="e-content">
             <div id="post-content-dropcap"></div>
             {{content}}
             <div id="post-content-end"></div>

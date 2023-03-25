@@ -14,9 +14,9 @@
                     {{#get "posts" filter="tags:{{slug}}"}}
                         <ul>
                             {{#foreach posts}}
-                                <li>
-                                    <a href="{{url}}">{{title}}</a>
-                                    <p>{{excerpt}}</p>
+                                <li class="h-entry">
+                                    <a href="{{url}}" class="u-url p-name">{{title}}</a>
+                                    <p class="p-summary">{{excerpt}}</p>
                                 </li>
                             {{/foreach}}
                         </ul>

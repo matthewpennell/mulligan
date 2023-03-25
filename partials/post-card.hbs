@@ -1,4 +1,4 @@
-<article class="{{post_class}}">
+<article class="{{post_class}} h-entry">
 
     {{#if feature_image}}
         <a class="post-card-image-link" href="{{url}}">
@@ -23,12 +23,12 @@
             <div class="tags">
                 {{tags separator=" / "}}
             </div>
-            <h2><a href="{{url}}">{{title}}</a></h2>
-            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+            <h2 class="p-name"><a href="{{url}}">{{title}}</a></h2>
+            <time class="dt-published" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
         </header>
 
         {{#if excerpt}}
-            <p class="excerpt">
+            <p class="excerpt p-summary">
                 <a href="{{url}}">
                     {{excerpt}}
                 </a>
