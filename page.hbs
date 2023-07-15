@@ -1,0 +1,30 @@
+{{!< default}}
+
+{{#post}}
+
+{{#contentFor "page-title"}}{{title}} &bull; {{@site.title}}{{/contentFor}}
+
+<main role="main">
+
+    <article class="{{post_class}} h-entry">
+
+        <section id="metadata">
+
+            <header>
+
+                <h1 class="p-name">{{title}}</h1>
+
+            </header>
+
+        </section>
+
+        <div id="post-content" class="e-content">
+            {{content}}
+            <div id="post-content-end"></div>
+        </div>
+
+    </article>
+
+</main>
+
+{{/post}}
