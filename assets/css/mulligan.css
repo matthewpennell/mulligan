@@ -621,6 +621,7 @@ figcaption a {
   width: 3.2rem;
   height: 3.2rem;
   background: var(--color-darkgreen);
+  margin-bottom: 3.2rem;
 }
 
 #post-content-end::after {
@@ -635,12 +636,29 @@ figcaption a {
 #post-navigation {
   font-family: var(--font-sans);
   font-size: 14px;
-  margin-left: -100%;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--color-grey);
+}
+
+#post-navigation-prev {
+  border-right: 1px solid var(--color-grey);
+  padding: 1.6rem 0;
+  flex-grow: 1;
+}
+
+#post-navigation-next {
+  flex-grow: 1;
+  padding: 1.6rem 0;
   text-align: right;
-  width: 100%;
-  padding-right: 1.6rem;
-  top: -3.2rem;
-  position: relative;
+}
+
+.post-navigation-label {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  text-transform: uppercase;
+  color: var(--color-midgreen);
+  display: block;
 }
 
 /* About

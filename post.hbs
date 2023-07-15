@@ -65,9 +65,18 @@
             {{content}}
             <div id="post-content-end"></div>
             <div id="post-navigation">
-                {{#prev_post}}
-                    Previous post: <a href="{{url}}">{{title}}</a>
-                {{/prev_post}}
+                <div id="post-navigation-prev">
+                    {{#prev_post}}
+                        <span class="post-navigation-label">Previous post</span>
+                        <a href="{{url}}">{{title}}</a>
+                    {{/prev_post}}
+                </div>
+                <div id="post-navigation-next">
+                    {{#next_post}}
+                        <span class="post-navigation-label">Next post</span>
+                        <a href="{{url}}">{{title}}</a>
+                    {{/next_post}}
+                </div>
             </div>
         </div>
 
