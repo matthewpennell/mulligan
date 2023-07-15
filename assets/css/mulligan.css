@@ -541,7 +541,7 @@ figcaption a {
   height: 17.8rem;
   text-align: center;
   line-height: 16.8rem;
-  margin-right: 3.2rem;
+  margin-right: 2.4rem;
 }
 
 .sr-only {
@@ -1139,6 +1139,7 @@ footer p {
 
   main {
     display: block;
+    padding-top: 14rem;
   }
 
   .post-template #metadata,
@@ -1148,11 +1149,27 @@ footer p {
     width: auto;
   }
 
+  .post-template article header {
+    margin: 0;
+    padding: 3.2rem 0 3.2rem 4.8rem;
+  }
+
+  .post-template article header:before {
+    left: 0rem;
+  }
+
   #post-content,
   #post-content-dropcap {
     margin-left: 0;
   }
 
+  #post-content-dropcap {
+    font-size: 10.5rem;
+    width: 10.5rem;
+    height: 10.5rem;
+    line-height: 9.5rem;
+  }
+  
   .other-stuff {
     padding-top: 3.2rem;
     width: 100%;
