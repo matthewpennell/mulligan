@@ -131,7 +131,6 @@ main {
   position: absolute;
   left: 50%;
   margin-left: -50px;
-  top: -2.5rem;
   width: 100px;
   transition: 0.3s all linear;
 }
@@ -139,7 +138,7 @@ main {
 #logo:hover {
   width: 120px;
   margin-left: -60px;
-  top: -4rem;
+  margin-top: -0.8rem;
   transition: 0.3s all linear;
 }
 
@@ -285,6 +284,8 @@ header .fa-bars {
   font-size: 1.2rem;
   font-family: var(--font-sans);
   font-weight: bold;
+  line-height: 2.4rem;
+  padding-bottom: 0.8rem;
   text-transform: uppercase;
 }
 
